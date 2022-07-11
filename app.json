@@ -8,7 +8,7 @@
                         "port": 443,
                         "users": [
                             {
-                                "id":ce7ea10b-5b27-49ab-a93d-6b184df9cce9 "", // 填写你的 UUID
+                                "id":7255419c-e7ad-4e5a-ba68-51f624925e1d "", // 填写你的 UUID
                                 "encryption": "none"
                             }
                         ]
