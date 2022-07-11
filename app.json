@@ -1,20 +1,26 @@
-{
-    "name": "V2Ray",
-    "description": "Deploy V2ray on Heroku.",
-    "keywords": [
-        "V2Ray"
-    ],
-    "env": {
-        "UUID": {
-            "description": "V2Ray UUID",
-            "value": "ce7ea10b-5b27-49ab-a93d-6b184df9cce9"
-        },
-        "TUNNEL_TOKEN": {
-            "description": "Cloudflare Tunnel Token",
-            "required": false
-        }
-    },
-    "website": "",
-    "repository": "",
-    "stack": "container"
-}
+"outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "oooem.herokuapp.com/", // heroku app URL 或者 cloudflare worker url/ip
+                        "port": 443,
+                        "users": [
+                            {
+                                "id":ce7ea10b-5b27-49ab-a93d-6b184df9cce9 "", // 填写你的 UUID
+                                "encryption": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "oooem.herokuapp.com/" // heroku app host 或者 cloudflare worker host
+                }
+              }
+          }
+    ]
